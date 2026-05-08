@@ -2,7 +2,6 @@
 
 TeamTask is a high-performance, visually stunning task management platform designed for modern teams. Built with a focus on speed, real-time collaboration, and executive-level analytics, it transforms complex project workflows into intuitive, interactive experiences.
 
-![TeamTask Preview](https://images.unsplash.com/photo-1540350394557-8d14678e7f91?auto=format&fit=crop&q=80&w=2000)
 
 ## ✨ Core Features
 

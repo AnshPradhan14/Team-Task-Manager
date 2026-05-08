@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 TeamTask: Premium Enterprise Task Management
 
-## Getting Started
+TeamTask is a high-performance, visually stunning task management platform designed for modern teams. Built with a focus on speed, real-time collaboration, and executive-level analytics, it transforms complex project workflows into intuitive, interactive experiences.
 
-First, run the development server:
+![TeamTask Preview](https://images.unsplash.com/photo-1540350394557-8d14678e7f91?auto=format&fit=crop&q=80&w=2000)
 
+## ✨ Core Features
+
+### 🔍 Glassmorphic Command Palette
+- **Global Control**: Access any task, page, or administrative action from anywhere using `Cmd + K`.
+- **Fuzzy Search**: Immersive frosted-glass overlay with instant results for team members and project milestones.
+
+### 📊 Executive Insights Dashboard
+- **Real-Time Activity Feed**: Live polling feed showing task state changes, assignments, and completions as they happen.
+- **Advanced Analytics**: Interactive charts for team productivity, task distribution, and project health monitoring.
+
+### 🏗️ Advanced Kanban Workspace
+- **Drag-and-Drop**: Fluid card movement powered by `@dnd-kit`.
+- **Dynamic Feedback**: Visual "glow" effects and spring-like animations for a tactile project management experience.
+- **Priority Intelligence**: Color-coded urgency indicators and automated overdue detection.
+
+### 🛡️ Enterprise Security & RBAC
+- **Role-Based Access**: Granular control (Admin vs. Member) over task creation, deletion, and team-wide statistics.
+- **Secure Auth**: Powered by NextAuth.js with production-grade encryption.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 15+ (App Router)
+- **Database**: PostgreSQL (Prisma ORM)
+- **Styling**: Tailwind CSS + Shadcn UI
+- **State Management**: TanStack Query (React Query)
+- **Authentication**: NextAuth.js
+- **Animations**: Framer Motion & CSS Micro-animations
+
+---
+
+## 🚀 Getting Started
+
+### 1. Prerequisites
+- Node.js 20+
+- A PostgreSQL database instance
+
+### 2. Installation
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/AnshPradhan14/Team-Task-Manager.git
+cd Team-Task-Manager
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Environment Configuration
+Create a `.env` file in the root directory:
+```env
+DATABASE_URL="postgresql://user:password@localhost:5403/teamtask"
+NEXTAUTH_SECRET="your-secret-key"
+NEXTAUTH_URL="http://localhost:3000"
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 4. Database Setup
+```bash
+npx prisma db push
+npx prisma generate
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 5. Run Development Server
+```bash
+npm run dev
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## ☁️ Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project is pre-configured for **Railway**.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Connect your repository to Railway.
+2. Add a **PostgreSQL** service.
+3. Configure the environment variables in the Railway dashboard.
+4. Railway will automatically execute the build pipeline defined in `railway.json`.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📄 License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+

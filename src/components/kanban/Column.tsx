@@ -10,7 +10,8 @@ interface AssignedUser {
 }
 
 interface Task {
-  id: string;
+  id: number;
+  projectId: string;
   title: string;
   status: string;
   priority: string;

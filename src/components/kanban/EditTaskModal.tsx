@@ -59,7 +59,7 @@ export function EditTaskModal({
         description: formData.get("description") as string,
         priority: formData.get("priority") as "LOW" | "MEDIUM" | "HIGH",
         dueDate: formData.get("dueDate") ? new Date(formData.get("dueDate") as string) : undefined,
-        assignedToUserId: selectedEmployee || null,
+        assignedToUserId: selectedEmployee || undefined,
       });
       onClose();
       router.refresh();

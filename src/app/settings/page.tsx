@@ -1,4 +1,4 @@
-import { Settings as SettingsIcon, Shield, Bell, Lock, Appearance } from "lucide-react";
+import { Settings as SettingsIcon, Shield, Bell, Lock } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 

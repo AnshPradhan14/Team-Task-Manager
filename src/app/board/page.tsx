@@ -56,7 +56,7 @@ export default async function BoardPage() {
       </div>
 
       <div className="flex-1 min-h-0 bg-muted/20 rounded-2xl border border-dashed border-muted overflow-hidden">
-        <KanbanBoard initialTasks={tasks} projectId={defaultProject.id} />
+        <KanbanBoard initialTasks={tasks as any} projectId={defaultProject.id} />
       </div>
     </div>
   );

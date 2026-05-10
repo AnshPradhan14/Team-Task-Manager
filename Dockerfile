@@ -51,4 +51,4 @@ ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
 # Run prisma db push then start the app, with verbose debugging
-CMD ["sh", "-c", "echo '🚀 Starting deployment...' && (prisma db push --accept-data-loss || echo '❌ Prisma db push failed, continuing anyway to start server...') && echo '🟢 Starting Next.js server...' && node server.js"]
+CMD ["sh", "-c", "echo '🚀 Starting deployment...' && (prisma db push --accept-data-loss --skip-generate || echo '❌ Prisma db push failed, continuing anyway to start server...') && echo '🟢 Starting Next.js server...' && node server.js"]

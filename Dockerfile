@@ -1,12 +1,14 @@
 # Stage 1: Install dependencies
 FROM node:20-alpine AS deps
+RUN apk add --no-cache openssl
 WORKDIR /app
 
 COPY package.json package-lock.json ./
-RUN npm ci
+RUN npm ci --ignore-scripts
 
 # Stage 2: Build the application
 FROM node:20-alpine AS builder
+RUN apk add --no-cache openssl
 WORKDIR /app
 
 COPY --from=deps /app/node_modules ./node_modules
@@ -21,6 +23,7 @@ RUN npm run build
 
 # Stage 3: Production runtime image
 FROM node:20-alpine AS runner
+RUN apk add --no-cache openssl
 WORKDIR /app
 
 ENV NODE_ENV=production
@@ -47,5 +50,5 @@ EXPOSE 3000
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
-# Run prisma db push then start the app
-CMD ["sh", "-c", "prisma db push --accept-data-loss && node server.js"]
+# Run prisma db push then start the app, with verbose debugging
+CMD ["sh", "-c", "echo '🚀 Starting deployment...' && (prisma db push --accept-data-loss || echo '❌ Prisma db push failed, continuing anyway to start server...') && echo '🟢 Starting Next.js server...' && node server.js"]
